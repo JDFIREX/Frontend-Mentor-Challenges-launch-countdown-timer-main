@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@700&display=swap');
+
+.atrribution_div{width: calc(90vw - 15px); position: fixed ; bottom: 0px; left : 10px; color: black;}
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+*{
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    font-family: 'Red Hat Text', sans-serif;
+}
+body{
+    position: relative;
+    top: 0;left: 0;
+    width: 100%;
+}
+
+.design{
+    position: absolute;
+    top: 0;left: 0;
+    width: 100%;
+    opacity: 0.6;
+}

@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@700&display=swap");
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: #3e52a3;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Red Hat Text', sans-serif;
+}
+
+body {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.design {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0.6;
+}
+/*# sourceMappingURL=style.css.map */
