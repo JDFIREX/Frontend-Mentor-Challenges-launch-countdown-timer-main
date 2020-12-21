@@ -32,12 +32,12 @@ body{
 }
 .bg_stars{
     position: absolute;top: 0; left: 0;
-    width: 100%;
+    width: 100vw;
     height: 100%;
     background-image: url("./images/bg-stars.svg");
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
     // display: none;
 }
 .bg_hills{
@@ -91,33 +91,12 @@ h1{
         div:nth-child(2){
             clip-path: inset(0 0 50% 0);
             color: hsl(345, 60%, 56%);
-            background-color: hsl(237, 20%, 18%);
+            background-color: rgb(44, 44, 68);
         }
         div:nth-child(3){
             clip-path: inset(0 0 50% 0);
             color: hsl(345, 60%, 56%);
-            background-color: hsl(237, 20%, 18%);
-
-        }
-
-        @keyframes flip {
-            49%{
-                transform: rotateX(-90deg);
-                clip-path: inset(0 0 50% 0);
-                color: hsl(345, 60%, 56%);
-                background-color: hsl(237, 20%, 18%);
-            }
-            51%{
-                clip-path: inset(50% 0 0 0);
-                color: hsl(345, 95%, 68%);
-                background-color: hsl(236, 21%, 26%);
-            }
-            100%{
-                clip-path: inset(50% 0 0 0);
-                color: hsl(345, 95%, 68%);
-                transform: rotateX(0deg);
-                background-color: hsl(236, 21%, 26%);
-            }
+            background-color: rgb(44, 44, 68);
         }
 
         p{
