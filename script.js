@@ -1,4 +1,5 @@
-let time = 14 * 24 * 60 * 60;
+let time = 1209600;
+
 
 let start = false;
 let t = [];
@@ -22,7 +23,10 @@ let card42 = document.querySelector(".card-4-2")
 let card43 = document.querySelector(".card-4-3")
 
 window.addEventListener("load",(e) => {
-    load()
+        loadAnimation()
+    setTimeout(() => {
+        load()
+    }, 1000);
     setTimeout(() => {
         setInterval(() => {
             setTimer()
@@ -33,8 +37,8 @@ window.addEventListener("load",(e) => {
 
 function setTime(t){
     let tt = t
-    let day = Math.floor(tt / (24 * 3600))
-    tt = tt - (day * 24 * 3600 )
+    let day = Math.floor(tt / (86400))
+    tt = tt - (day * 86400 )
     let hours = Math.floor(tt / 3600)
     tt = tt - (hours * 3600 )
     let minutes = Math.floor(tt /  60)
@@ -44,6 +48,7 @@ function setTime(t){
 }
 
 function load(){
+
     t = setTime(time)
 
     card11.innerHTML = t[0];
@@ -57,7 +62,7 @@ function load(){
     card33.innerHTML = t[2];
     card41.innerHTML = t[3];
     card42.innerHTML = t[3];
-    card43.innerHTML = t[3];
+    card43.innerHTML = t[3]; 
 
     t2 = t;
 }
@@ -139,9 +144,76 @@ function FlipCard(p,c,c2){
             })
         }).then(r => {
             setTimeout(() => {
-                c.innerHTML = p ;
                 c2.innerHTML = p;
             }, 700);
         })
-
 }
+
+
+function loadAnimation(){
+    let gs = gsap.timeline({defaults: {ease: "Power2.inOut"}});
+    
+    gs.to(card11,.4,{
+        opacity : 1,
+        rotateX: "-90deg"
+    }).to(card11,0,{
+        clipPath : "inset(50% 0 0 0)"
+    }).to(card11,.4,{
+        opacity : 1,
+        rotateX: 0,
+    }).to(card21,.4,{
+        opacity : 1,
+        rotateX: "-90deg"
+    },"-=.80")
+    .to(card21,0,{
+        clipPath : "inset(50% 0 0 0)"
+    }).to(card21,.40,{
+        opacity : 1,
+        rotateX: 0
+    }).to(card31,.4,{
+        opacity : 1,
+        rotateX: "-90deg"
+    },"-=.80")
+    .to(card31,0,{
+        clipPath : "inset(50% 0 0 0)"
+    })
+    .to(card31,.40,{
+        opacity : 1,
+        rotateX: 0
+    })
+    .to(card41,.4,{
+        opacity : 1,
+        rotateX: "-90deg"
+    },"-=.80")
+    .to(card41,0,{
+        clipPath : "inset(50% 0 0 0)"
+    })
+    .to(card41,.40,{
+        opacity : 1,
+        rotateX: 0
+    })
+    .from(".header",.4,{
+        opacity: 0,
+        y: -300,
+        scale : 0
+    },"-=1.3")
+    .from('.fb',.2,{
+        opacity : 0,
+        clipPath : "inset(0 0 100% 0)"
+    },"-=1.5")
+    .fromTo('.pt', {
+        clipPath : "circle(0% at 50% 50%)"
+    },{
+        duration : .4,
+        clipPath : "circle(100% at 50% 50%)"
+    },"-=1.7")
+    .fromTo(".ig", {
+        clipPath : " polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%)"
+    },{
+        duration: .5,
+        clipPath : "polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)"
+    },"-=1.7").to(".ig",.2,{
+        clipPath :"polygon(100% 0, 100% 100%, 0 100%, 0 0)"
+    },"-=1.3")
+}
+
