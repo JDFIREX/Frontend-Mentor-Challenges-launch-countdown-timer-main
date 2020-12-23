@@ -4,6 +4,10 @@
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
 
+html{
+    overflow-x: hidden;
+}
+
 *{
     margin: 0; padding: 0;
     box-sizing: border-box;
@@ -12,21 +16,21 @@
 body{
     position: relative;
     width: 100%;
+    min-height: 100vh;
     text-align: center;
     display: flex;
     align-items: center;
     flex-direction: column;
-    overflow-x: hidden;
     font-size: 14px;
     background-color: hsl(234, 17%, 12%);
 }
-@media only screen and (max-height: 800px){
+@media only screen and (max-height: 700px){
     body{
-        min-height: 800px;
+        min-height: 700px;
         overflow-y: auto;
     }
 }
-@media only screen and (min-height: 800px){
+@media only screen and (min-height: 700px){
     body{
         overflow: hidden;
         min-height: 100vh;
@@ -130,6 +134,7 @@ body{
 }
 
 .bg_hills{
+    // width: 1440px;
     bottom: 0;
     left: 0;
     height: 13.7vw;
