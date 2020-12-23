@@ -27,7 +27,6 @@
 body {
   position: relative;
   width: 100%;
-  min-height: 100vh;
   text-align: center;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -39,9 +38,23 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  overflow: hidden;
+  overflow-x: hidden;
   font-size: 14px;
   background-color: #191a24;
+}
+
+@media only screen and (max-height: 800px) {
+  body {
+    min-height: 800px;
+    overflow-y: auto;
+  }
+}
+
+@media only screen and (min-height: 800px) {
+  body {
+    overflow: hidden;
+    min-height: 100vh;
+  }
 }
 
 .bg_stars1,
@@ -83,15 +96,18 @@ body {
     top: 00vh;
   }
   45% {
+    height: 0;
     top: 100vh;
   }
   46% {
     opacity: 0;
   }
   47% {
+    height: 0;
     top: -100vh;
   }
   50% {
+    height: 100vh;
     opacity: 1;
   }
   100% {
@@ -104,15 +120,18 @@ body {
     top: 00vh;
   }
   45% {
+    height: 0;
     top: 100vh;
   }
   46% {
     opacity: 0;
   }
   47% {
+    height: 0;
     top: -100vh;
   }
   50% {
+    height: 100vh;
     opacity: 1;
   }
   100% {
@@ -122,12 +141,18 @@ body {
 
 @-webkit-keyframes slidedown1 {
   0% {
+    height: 100vh;
     top: -100vh;
   }
   10% {
     opacity: 1;
   }
+  30% {
+    top: 0;
+    height: 100vh;
+  }
   95% {
+    height: 0;
     top: 100vh;
   }
   100% {
@@ -137,12 +162,18 @@ body {
 
 @keyframes slidedown1 {
   0% {
+    height: 100vh;
     top: -100vh;
   }
   10% {
     opacity: 1;
   }
+  30% {
+    top: 0;
+    height: 100vh;
+  }
   95% {
+    height: 0;
     top: 100vh;
   }
   100% {
@@ -153,36 +184,50 @@ body {
 @-webkit-keyframes slidedown3 {
   0% {
     top: 100vh;
+    height: 0;
   }
   10% {
     opacity: 0;
   }
   15% {
+    height: 0;
     top: -100vh;
   }
   20% {
+    height: 100vh;
     opacity: 1;
+  }
+  60% {
+    top: 0vh;
   }
   100% {
     top: 100vh;
+    height: 0;
   }
 }
 
 @keyframes slidedown3 {
   0% {
     top: 100vh;
+    height: 0;
   }
   10% {
     opacity: 0;
   }
   15% {
+    height: 0;
     top: -100vh;
   }
   20% {
+    height: 100vh;
     opacity: 1;
+  }
+  60% {
+    top: 0vh;
   }
   100% {
     top: 100vh;
+    height: 0;
   }
 }
 
